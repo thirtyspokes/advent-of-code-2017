@@ -33,7 +33,8 @@ namespace DayOne.Services
             {
                 return ahead - length;
             }
-            else {
+            else
+            {
                 return ahead;
             }
         }
