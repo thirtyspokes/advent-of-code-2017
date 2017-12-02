@@ -15,10 +15,9 @@ namespace DayTwo.Services
         public Spreadsheet ParseInput(string path)
         {
             var raw = System.IO.File.ReadAllText(path).Trim();
-            var lines = raw.Split("\n")
-                .Select(x => x.Trim().Split(" ", StringSplitOptions.RemoveEmptyEntries)
-                .Select(y => Int32.Parse(y)));
-            IEnumerable<Row> rows = lines.Select(x => new Row(x));
+            IEnumerable<Row> rows = raw.Split("\n")
+                .Select(x => x.Trim().Split(" ", StringSplitOptions.RemoveEmptyEntries).Select(y => Int32.Parse(y)))
+                .Select(x => new Row(x));
             return new Spreadsheet(rows);
         }
     }
