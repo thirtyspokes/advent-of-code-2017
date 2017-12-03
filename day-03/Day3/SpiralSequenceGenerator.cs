@@ -59,42 +59,17 @@ namespace Day3
                 var hasLeft  = spiral.ContainsKey((current.Item1 -1, current.Item2));
                 var hasRight = spiral.ContainsKey((current.Item1 + 1, current.Item2));
 
-                if (hasLeft && !hasRight && !hasAbove && !hasBelow)
-                {
-                    // Go up.
-                    return (current.Item1, current.Item2 + 1);
-                }
-                else if (!hasLeft && !hasRight && !hasAbove && hasBelow)
+                if (!hasLeft && !hasAbove && hasBelow)
                 {       
                     // Go left.
                     return (current.Item1 - 1, current.Item2);
                 }
-                else if (!hasLeft && hasRight && !hasAbove && hasBelow)
-                {
-                    // Go left.
-                    return (current.Item1 - 1, current.Item2);
-                }
-                else if (!hasLeft && hasRight && !hasAbove && !hasBelow)
+                else if (!hasLeft && hasRight && !hasBelow)
                 {
                     // Go down.
                     return (current.Item1, current.Item2 - 1);
                 }
-                else if (!hasLeft && hasRight && hasAbove && !hasBelow)
-                {
-                    // Go down.
-                    return (current.Item1, current.Item2 - 1);
-                }
-                else if (!hasLeft&& !hasRight && hasAbove && !hasBelow )
-                {
-                    // Go right.
-                    return (current.Item1 + 1, current.Item2);
-                }
-                else if (hasLeft && !hasRight && hasAbove && !hasBelow)
-                {
-                    // Go right.
-                    return (current.Item1 + 1, current.Item2);
-                }
-                else if (hasLeft && !hasRight && hasAbove && !hasBelow)
+                else if (!hasRight && hasAbove && !hasBelow )
                 {
                     // Go right.
                     return (current.Item1 + 1, current.Item2);
