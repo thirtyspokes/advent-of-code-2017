@@ -64,9 +64,9 @@ namespace Day10
             return input.Trim().ToCharArray().Select(x => (int)x).Concat(standardSuffix).ToArray();
         }
 
-        public int[] PerformHashRounds(int[] input, int numRounds)
+        public int[] PerformHashRounds(int[] input, int numRounds = 64, int listSize = 256)
         {
-            int[] list = _generateList(256);
+            int[] list = _generateList(listSize);
             int position = 0;
             int skipSize = 0;
 
@@ -75,28 +75,12 @@ namespace Day10
                 foreach (int len in input)
                 {
                     this.ReverseSubsequence(list, position, len);
-                    position = this._getLoopingIndex(256, position + 1, len + skipSize);
+                    position = this._getLoopingIndex(listSize, position + 1, len + skipSize);
                     skipSize++;
                 }
             }
 
             return list;
-        }
-
-        public int CalculateSingleHashRound(int listSize, int[] lengths)
-        {
-            int[] list = _generateList(listSize);
-            int position = 0;
-            int skipSize = 0;
-
-            foreach (int len in lengths)
-            {
-                this.ReverseSubsequence(list, position, len);
-                position = this._getLoopingIndex(listSize, position + 1, len + skipSize);
-                skipSize++;
-            }
-            
-            return list[0] * list[1];
         }
 
         public void ReverseSubsequence(int[] list, int start, int length)
@@ -110,7 +94,8 @@ namespace Day10
                 list[start] = list[target];
                 list[target] = temp;
 
-                // Shrink to the next pair
+                // Shrink the subsequence from both ends, so that we can swap the next
+                // pair: i.e., we first swapped (0, len) and will now swap (1, len - 1), etc.
                 start = _getLoopingIndex(list.Length, start + 1, 1);
                 length = length - 2;
             }

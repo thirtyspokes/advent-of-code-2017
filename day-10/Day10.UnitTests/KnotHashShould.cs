@@ -40,10 +40,11 @@ namespace Day10.UnitTests
         }
 
         [Fact]
-        public void CalculateHashes()
+        public void CalculateHashRounds()
         {
             KnotHash kh = new KnotHash();
-            Assert.Equal(12, kh.CalculateSingleHashRound(5, new int[]{3, 4, 1, 5}));
+            var result = kh.PerformHashRounds(new int[]{3, 4, 1, 5}, 1, 5);
+            Assert.Equal(12, result[0] * result[1]);
         }
 
         [Fact]
