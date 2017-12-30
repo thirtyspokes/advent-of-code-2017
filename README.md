@@ -14,3 +14,4 @@ Problems
 8.  [Day 8: I Heard You Like Registers](/day-08/Day8)
 9.  [Day 9: Stream Processing](/day-09/Day9)
 10.  [Day 10: Knot Hash](/day-10/Day10)
+11.  [Day 11: Hex Ed](/day-11/Day11)
