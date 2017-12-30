@@ -13,3 +13,4 @@ Problems
 7.  [Day 7: Recursive Circus](/day-07/Day7)
 8.  [Day 8: I Heard You Like Registers](/day-08/Day8)
 9.  [Day 9: Stream Processing](/day-09/Day9)
+10.  [Day 10: Knot Hash](/day-10/Day10)
