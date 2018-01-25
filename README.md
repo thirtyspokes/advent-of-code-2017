@@ -17,3 +17,4 @@ Problems
 11.  [Day 11: Hex Ed](/day-11/Day11/)
 12.  [Day 12: Digital Plumber](/day-12/Day12/)
 13.  [Day 13: Packet Scanners](/day-13/Day13/)
+14.  [Day 14: Packet Scanners](/day-14/Day14/)
