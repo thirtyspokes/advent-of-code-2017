@@ -18,4 +18,5 @@ Problems
 12.  [Day 12: Digital Plumber](/day-12/Day12/)
 13.  [Day 13: Packet Scanners](/day-13/Day13/)
 14.  [Day 14: Disk Defragmentation](/day-14/Day14/)
-15.  [Day 14: Dueling Generators](/day-15/Day15/)
+15.  [Day 15: Dueling Generators](/day-15/Day15/)
+15.  [Day 16: Permutation Promenade](/day-16/Day16/)
